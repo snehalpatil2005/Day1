@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Things</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #bdc3c7;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+
+        .food-list li {
+            list-style-type: none;
+            background: linear-gradient(to right, #e74c3c, #e67e22);
+            color: white;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .food-list li:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .movie-list li {
+            list-style-type: none;
+            counter-increment: movie-counter;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .movie-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .movie-list li::before {
+            content: counter(movie-counter);
+            background-color: white;
+            color: #3498db;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        dt {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            background-color: #ecf0f1;
+            border-left: 4px solid #9b59b6;
+            border-radius: 4px;
+        }
+
+        dd {
+            margin-bottom: 20px;
+            padding: 0 15px 15px 15px;
+            color: #555;
+        }
+
+        .tag-list {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .tag-list dt {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-left: 4px solid white;
+        }
+
+        .tag-list dd {
+            color: #f1f1f1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Favorite Things</h1>
+            <p class="subtitle">A showcase of my preferences using HTML lists</p>
+        </header>
+
+        <section class="food-section">
+            <h2>🥗 My Favorite Foods</h2>
+            <ul class="food-list">
+                <li>Pizza Margherita</li>
+                <li>Sushi Platter</li>
+                <li>Chocolate Lava Cake</li>
+                <li>Avocado Toast with Poached Eggs</li>
+                <li>Pad Thai</li>
+            </ul>
+        </section>
+
+        <section class="movie-section">
+            <h2>🎬 My Top 3 Favorite Movies</h2>
+            <ol class="movie-list">
+                <li>The Shawshank Redemption</li>
+                <li>Inception</li>
+                <li>The Dark Knight</li>
+            </ol>
+        </section>
+
+        <section class="html-section">
+            <h2>💻 HTML Tags Explained</h2>
+            <dl class="tag-list">
+                <dt>&lt;p&gt;</dt>
+                <dd>The paragraph tag defines a paragraph of text. It automatically adds some space (margin) before and after each paragraph element, making text content more readable and structured.</dd>
+                
+                <dt>&lt;a&gt;</dt>
+                <dd>The anchor tag creates hyperlinks that connect one web page to another. It uses the href attribute to specify the destination URL, allowing users to navigate between pages or resources on the web.</dd>
+                
+                <dt>&lt;img&gt;</dt>
+                <dd>The image tag embeds images into an HTML document. It uses the src attribute to specify the image source and the alt attribute to provide alternative text for accessibility and when images cannot be displayed.</dd>
+            </dl>
+        </section>
+
+        <footer>
+            <p>Assignment 2: My Favorite Things - HTML Lists Practice</p>
+        </footer>
+    </div>
+</body>
+</html>
